@@ -248,3 +248,11 @@ class DockerVersion(object):
                 has = (d_run.exit_status > 120)
             DockerVersion._has_distinct_exit_codes = has
         return DockerVersion._has_distinct_exit_codes
+
+    @property
+    def is_podman(self):
+        """
+        FIXME
+        """
+        d_help = utils.run('docker --help')
+        return ('podman' in d_help.stdout)

@@ -12,6 +12,7 @@ from autotest.client import utils
 from empty import empty
 from dockertest.dockercmd import DockerCmd
 from dockertest.output import mustfail
+from dockertest.output import DockerVersion
 from dockertest import output
 
 
@@ -26,7 +27,10 @@ class truncated(empty):
         image_name = self.sub_stuff['image_name']  # assume id lookup failed
         if self.parent_subtest.config['remove_after_test']:
             dkrcmd = DockerCmd(self, 'rmi', [image_name])
-            mustfail(dkrcmd.execute(), 1)
+            expected_status = 1
+            if DockerVersion().is_podman:
+                expected_status = 125
+            mustfail(dkrcmd.execute(), expected_status)
 
     def run_tar(self, tar_command, dkr_command):
         tarfile = os.path.join(self.parent_subtest.bindir, self.TARFILENAME)
