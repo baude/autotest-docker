@@ -119,6 +119,7 @@ def which_docker():
     or the name of a known docker-as-system-container service.
     """
     docker = 'docker'
+    return 'podman'          # FIXME FIXME FIXME
 
     # Known docker-daemon services as of July 2017
     docker_services = ('docker', 'docker-latest', 'container-engine')
