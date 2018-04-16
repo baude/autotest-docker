@@ -75,7 +75,7 @@ sub do_version {
 Client:
  Version:         1.12.6
  API version:     1.24
- Package version: docker-1.12.6-68.2.hotfix.gitec8512b.el7.x86_64
+ Package version: podman-V-R
  Go version:      go1.8.3
  Git commit:      5246e78-unsupported
  Built:           Wed Jan 31 14:13:27 2018
@@ -84,7 +84,7 @@ Client:
 Server:
  Version:         1.12.6
  API version:     1.24
- Package version: docker-1.12.6-68.2.hotfix.gitec8512b.el7.x86_64
+ Package version: podman-V-R
  Go version:      go1.8.3
  Git commit:      5246e78-unsupported
  Built:           Wed Jan 31 14:13:27 2018
